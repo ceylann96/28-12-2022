@@ -1,0 +1,137 @@
+<app-main-layout>
+  <etiya-pop-up *ngIf="show" (isClickedRightButton)="deleteCustomer(id)"></etiya-pop-up>
+    <app-background-template [width]="'auto'" [height]="'63.1rem'" >
+<div class="col-12">
+       <etiya-button-bar [button1Clicked]="true"></etiya-button-bar>
+    </div>
+    <div class="row ">
+        <h1 class="container_title">Customer Info<i [class.iconClicked]="editCustomer" (click)="clickUpdate()" class="fa-solid fa-pen icon"></i>
+           <i (click)="clickToDelete()" class="fa-solid fa-trash-can icon"></i></h1>
+    </div>
+      
+<form [formGroup]="customerInfoForm">
+      <div class="row input_style">
+        <div class="col-4 input">
+          <etiya-input
+            [form]="customerInfoForm"
+            [inputLabel]="'First Name'"
+            [inputType]="'text'"
+            [requiredField]="editCustomer"
+            [setDisabled]="!editCustomer"
+            formControlName="firstName"
+            [name]="'firstName'"
+          ></etiya-input>
+        </div>
+        <div class="col-4 " >
+          <etiya-input
+          [form]="customerInfoForm"
+            [inputLabel]="'Middle Name'"
+            [inputType]="'text'"
+            formControlName="middleName"
+            [setDisabled]="!editCustomer"
+            [name]="'middleName'"
+          ></etiya-input>
+        </div>
+      </div>
+      <div class="row input_style">
+        <div class="col-4 input">
+          <etiya-input
+          [form]="customerInfoForm"
+            [inputLabel]="'Last Name'"
+            [inputType]="'text'"
+            [requiredField]="editCustomer"
+            formControlName="lastName"
+            [name]="'lastName'"
+            [setDisabled]="!editCustomer"
+          ></etiya-input>
+        </div>
+        <div class="col-4">
+          <etiya-input
+          [form]="customerInfoForm"
+            [inputLabel]="'Birth Date'"
+            [inputType]="editCustomer ? 'date' : 'text'"
+            [requiredField]="editCustomer"
+            formControlName="birthDate"
+            [name]="'birthDate'"
+            [setDisabled]="!editCustomer"
+          ></etiya-input>
+        </div>
+      </div>
+      <div class="row input_style">
+        <div class="col-4 input">
+          <etiya-select-option
+          
+            formControlName="gender"
+            [inputLabel]="'Gender'"
+            [requiredField]="editCustomer"
+            [setDisabled]="!editCustomer"
+            
+          >
+          </etiya-select-option>
+        </div>
+        <div class="col-4">
+          <etiya-input
+          [form]="customerInfoForm"
+          formControlName="fatherName"
+            [inputLabel]="'Father Name'"
+            [inputType]="'text'"
+
+            [setDisabled]="!editCustomer"
+            [name]="'fatherName'"
+          ></etiya-input>
+        </div>
+      </div>
+      <div class="row input_style">
+        <div class="col-4 input">
+          <etiya-input
+          [form]="customerInfoForm"
+          formControlName="motherName"
+            [inputLabel]="'Mother Name'"
+            [inputType]="'text'"
+            [name]="'motherName'"
+            [setDisabled]="!editCustomer"
+          ></etiya-input>
+        </div>
+        <div class="col-4">
+          <etiya-input
+          [form]="customerInfoForm"
+          formControlName="nationalityId"
+            [inputLabel]="'Nationality Id'"
+            [inputType]="'text'"
+            [requiredField]="editCustomer"
+            [name]="'nationalityId'"
+            [setDisabled]="!editCustomer"
+          ></etiya-input>
+        </div>
+      </div>
+
+       
+        <div *ngIf="editCustomer" class="row d-flex justify-content-between">
+          <div class="col-2 etiya-button-left">
+            <etiya-button
+              [buttonColor]="'bg-gray'"
+              [buttonText]="'Cancel'"
+              (onClickButton)="cancel()"
+            ></etiya-button>
+          </div>
+          <div class="col-2 etiya-button-right">
+            <etiya-button
+              [buttonType]="'submit'"
+              [icon]="'fa-solid fa-chevron-right'"
+              [buttonColor]="'bg-orange'"
+              [buttonText]="'Save'"
+              (onClickButton)="update()"
+            ></etiya-button>
+          </div>
+        </div>
+      
+    
+    </form>
+      
+      
+      
+
+
+
+    </app-background-template>
+</app-main-layout>

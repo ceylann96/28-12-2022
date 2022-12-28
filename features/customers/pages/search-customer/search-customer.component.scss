@@ -1,0 +1,64 @@
+.bgc{
+    background-color: #f8faff;
+    margin-top: -20px;
+    height: 200px;
+}
+.table_style{
+    background-color:white;
+    border-radius: 30px;
+    margin-right: 20px;
+    margin-top: -10px;
+    height: 30px;
+    
+    margin-bottom: 50px;
+}
+.col-3{
+    background-color:white;
+    border-radius: 30px;
+    margin-right: 20px;
+   
+    
+    margin-top: -10px;
+    height: 30px;
+}
+
+.container_title{
+    width: 100%;
+    padding: 15px 0px 0px 0;
+    margin:15px 30px -15px 20px;
+    font-weight: 600;
+}
+
+th {
+    font-weight: 500;
+    background-color: #fafafa;
+    color:#334D6E;
+    font-size: 1.3rem;
+    padding: 10px 10px;
+    border-top: 0.5px solid #999;
+    border-bottom: 0.5px solid #999
+}
+th:first-child {
+    font-size: 1.5rem;
+    
+}
+td {
+    font-weight: 400;
+    font-size: 1.5rem;
+    padding: 10px 10px;
+    cursor: pointer;
+}
+
+tbody tr:hover{
+    background-color:#e8e6e6 ;
+}
+tbody tr td:nth-child(2) {
+    color:orange;
+}
+
+.create_button {
+    bottom: 20px;
+    position: fixed;
+    right: 60px;
+    
+}

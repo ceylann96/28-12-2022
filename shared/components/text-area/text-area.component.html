@@ -1,0 +1,12 @@
+<div class="form">
+    <div class="text-area-cont">
+      <label class="input"
+        >{{ inputLabel }} <span *ngIf="requiredField">*</span></label
+      >
+      <textarea
+        [(ngModel)]="value"
+        (ngModelChange)="onChange($event)"
+        (blur)="onTouched()"
+      ></textarea>
+    </div>
+  </div>

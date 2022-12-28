@@ -1,0 +1,38 @@
+.form {
+    margin: 12px;
+  }
+  .select-cont {
+    position: relative;
+    margin-bottom: 15px;
+  }
+  
+  label {
+    position: absolute;
+    top: -16px;
+    left: 33px;
+    background-color: white;
+    padding: 0 5px;
+    font-size: 1.6rem;
+    color: #999;
+  }
+  
+  select {
+    width: 100%;
+    border: 1px solid #828282;
+    border-radius: 49px;
+    padding: 10px ;
+    padding-inline-end: 10px;
+    font-size: 1.6rem;
+  }
+  option{
+    color: #334D6E
+  
+  }
+  select:focus-visible {
+    outline: none;
+  }
+  
+  span {
+    color: red;
+  }
+  

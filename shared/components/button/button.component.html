@@ -1,0 +1,21 @@
+<!-- <button
+  class="d-flex justify-content-center align-items-center py-2"
+  [ngClass]="buttonColor"
+>
+  <i
+    *ngIf="icon"
+    class="d-flex justify-content-center align-items-center fa-xs px-2"
+    [ngClass]="icon"
+  >
+  </i>
+  {{ buttonText }}
+</button> -->
+
+
+<button
+(click)="onClick($event)"
+  [ngClass]="buttonColor"
+>
+  <i *ngIf="icon" class="px-2" [ngClass]="icon"></i>
+  {{ buttonText }}
+</button>

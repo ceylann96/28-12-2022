@@ -1,0 +1,79 @@
+<app-main-layout>
+
+    
+     
+   <div class="row" > 
+    
+   
+    <div class="col-3">
+      <app-background-template [width]="'auto'" [height]="'63.1rem'" >
+    <h1 class="container_title px-4" > Search Filter</h1>
+       <ul class="list-group mt-5 px-4">
+        <etiya-input [(ngModel)]="customerFilter.id"  [inputLabel]="'Customer ID'" [inputType]="'number'"></etiya-input>
+        <etiya-input [(ngModel)]="customerFilter.nationalityId" [inputLabel]="'ID Number'" [inputType]="'number'"></etiya-input>
+       <etiya-input [(ngModel)]="customerFilter.accountNumber" [inputLabel]="'Account Number'" [inputType]="'string'"></etiya-input>
+       <etiya-input [(ngModel)]="customerFilter.gsmNumber"  [inputLabel]="'GSM Number'" [inputType]="'string'"></etiya-input>
+       <etiya-input [(ngModel)]="customerFilter.firstName"  [inputLabel]="'First Name'" [inputType]="'string'"></etiya-input>
+       <etiya-input [(ngModel)]="customerFilter.lastName"  [inputLabel]="'Last Name'" [inputType]="'string'"></etiya-input>
+       <etiya-input [(ngModel)]="customerFilter.orderNumber" [inputLabel]="'Order Number'" [inputType]="'number'"></etiya-input>
+     </ul>
+     <div class="modal-footer d-flex justify-content-between px-5" >
+       <etiya-button (onClickButton)="searchFilter()" [icon]="'fa-solid fa-search'" [buttonColor]="'bg-orange'" [buttonText]="'Search'"></etiya-button>
+       <etiya-button (onClickButton)="clearFilter()" [icon]="'fa-solid fa-eraser'" [buttonColor]="'bg-gray'" [buttonText]="'Clear'"  ></etiya-button>
+     </div> 
+    </app-background-template>
+     </div>
+   
+   
+     <div class="col table_style">  
+      <app-background-template [width]="'auto'" [height]="'63.1rem'" >
+           <h1 class="container_title" >Search Results</h1>
+       <table class="table mt-5">
+   
+           <thead class="thead-light" >
+             <tr class="py-3">
+               <th><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></th>
+               <th scope="col">Customer ID</th>
+               <th scope="col">First Name</th>
+               <th scope="col">Last Name</th>
+               <th scope="col">Role</th>
+               <th scope="col">ID Number</th>
+   
+             </tr>
+           </thead >
+           <ng-container *ngIf="!filterApplied">
+             <etiya-pop-up *ngIf="show"></etiya-pop-up>
+           </ng-container>
+           <ng-template *ngIf="filterApplied"
+           ngFor
+           let-customer
+           [ngForOf]="
+             customers
+           "
+         >
+           <tbody>
+             <tr [routerLink]="'/customer/' + customer.id + '/customer_info'">
+               <td scope="row"><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
+               <td >{{customer.id}}</td>
+               <td>{{customer.firstName}} {{customer.middleName}}</td>
+               <td>{{customer.lastName}}</td>
+               <td>{{customer.role}}</td>
+               <td>{{customer.nationalityId}}</td>
+             </tr>
+
+             
+           </tbody>
+       </ng-template>
+   
+         </table>
+          <div class="create_button">
+         <etiya-button (onClickButton)="searchFilter()" [icon]="'fa-solid fa-circle-plus'" [buttonColor]="'bg-orange'" [buttonText]="'Create Customer'"></etiya-button>
+        </div>
+        </app-background-template> 
+        
+        
+     </div>
+   </div>
+   
+   
+   </app-main-layout>
